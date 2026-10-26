@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RecipeHub helps you discover, filter, and save delicious recipes." />
+  <title>RecipeHub — Discover your next favorite recipe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="RecipeHub home"><span class="brand-mark">R</span><span>Recipe<span class="brand-accent">Hub</span></span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#home" data-view="home">Home</a>
+        <a class="nav-link" href="#explore" data-view="explore">Explore</a>
+        <a class="nav-link favorites-link" href="#favorites" data-view="favorites">Favorites <span id="favorite-count" class="count-badge">0</span></a>
+      </nav>
+      <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Good food, made simple</p>
+          <h1>Discover your next <em>favorite</em> recipe.</h1>
+          <p class="hero-text">Explore delicious recipes, find inspiration, and save your favorites for later.</p>
+          <form class="search-form hero-search" id="search-form" role="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Search recipes or ingredients..." aria-label="Search recipes or ingredients" />
+            <button type="submit" class="search-button">Search</button>
+          </form>
+          <div class="hero-meta"><span class="meta-dot"></span> Fresh ideas for every kind of cook</div>
+        </div>
+        <div class="hero-art" aria-label="Colorful bowl of fresh food">
+          <div class="hero-circle circle-one"></div><div class="hero-circle circle-two"></div>
+          <div class="food-bowl"><div class="bowl-food">🥗</div><div class="bowl-base"></div></div>
+          <span class="art-leaf leaf-one">✦</span><span class="art-leaf leaf-two">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="explore">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Browse by mood</p><h2>Find what you’re craving</h2></div><button class="text-button" id="clear-filters">Clear filters <span>↗</span></button></div>
+        <div class="filter-block"><span class="filter-label">Category</span><div class="filter-row" id="category-filters" role="group" aria-label="Filter by category"></div></div>
+        <div class="filter-block"><span class="filter-label">Dietary preference</span><div class="filter-row" id="diet-filters" role="group" aria-label="Filter by dietary preference"></div></div>
+
+        <div class="recipe-heading"><div><p class="eyebrow">Curated for you</p><h2 id="results-title">Explore recipes</h2></div><span class="results-count" id="results-count"></span></div>
+        <div class="recipe-grid" id="recipe-grid"></div>
+        <div class="empty-state hidden" id="empty-state"><div class="empty-icon">✦</div><h3 id="empty-title">No recipes found</h3><p id="empty-text">Try searching for another recipe or ingredient.</p><button class="primary-button" id="empty-action">Clear search</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><a class="brand footer-brand" href="#home"><span class="brand-mark">R</span><span>Recipe<span class="brand-accent">Hub</span></span></a><p>Discover delicious recipes and make every meal special.</p></div><p>© 2026 RecipeHub. All rights reserved.</p></div></footer>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop"><article class="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close recipe details">×</button><div id="modal-content"></div></article></div>
+  <script src="script.js"></script>
+</body>
+</html>
